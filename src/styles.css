@@ -1,0 +1,189 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 10px);
+  --radius-3xl: calc(var(--radius) + 18px);
+
+  --font-sans: "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1.125rem; /* 18px */
+
+  /* Deep navy blue background */
+  --background: oklch(0.14 0.045 270);
+  --foreground: oklch(0.97 0.01 270);
+
+  --card: oklch(0.22 0.04 270);
+  --card-foreground: oklch(0.97 0.01 270);
+  --popover: oklch(0.22 0.04 270);
+  --popover-foreground: oklch(0.97 0.01 270);
+
+  /* Primary: deep purple #6D28D9 */
+  --primary: oklch(0.45 0.24 296);
+  --primary-foreground: oklch(0.99 0 0);
+
+  /* Secondary: violet #8B5CF6 */
+  --secondary: oklch(0.62 0.22 296);
+  --secondary-foreground: oklch(0.99 0 0);
+
+  /* Accent: cyan for blue/purple/cyan palette */
+  --accent: oklch(0.65 0.18 230);
+  --accent-foreground: oklch(0.14 0.03 270);
+
+  --muted: oklch(0.25 0.04 270);
+  --muted-foreground: oklch(0.72 0.03 270);
+
+  --success: oklch(0.7 0.16 165);
+  --warning: oklch(0.79 0.16 75);
+  --destructive: oklch(0.65 0.23 27);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.35 0.04 270);
+  --input: oklch(0.35 0.04 270);
+  --ring: oklch(0.45 0.24 296);
+
+  --sidebar: oklch(0.18 0.04 270);
+  --sidebar-foreground: oklch(0.97 0.01 270);
+  --sidebar-primary: oklch(0.45 0.24 296);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.28 0.05 270);
+  --sidebar-accent-foreground: oklch(0.97 0.01 270);
+  --sidebar-border: oklch(0.35 0.04 270);
+  --sidebar-ring: oklch(0.45 0.24 296);
+
+  /* Gradients — deep purple over deep blue */
+  --gradient-primary: linear-gradient(135deg, oklch(0.35 0.22 296), oklch(0.55 0.26 310));
+  --gradient-hero: linear-gradient(135deg, #1e3a8a 0%, #4C1D95 50%, #C026D3 100%);
+  --gradient-card: linear-gradient(135deg, color-mix(in oklab, #2563EB 12%, transparent), color-mix(in oklab, #7C3AED 10%, transparent));
+
+  --shadow-soft: 0 4px 20px -4px color-mix(in oklab, #1e3a8a 35%, transparent);
+  --shadow-glow: 0 10px 40px -10px color-mix(in oklab, #7C3AED 45%, transparent);
+  --shadow-card: 0 2px 12px -2px rgba(0, 0, 0, 0.35);
+}
+
+
+.dark {
+  /* Deeper midnight blue */
+  --background: oklch(0.10 0.04 270);
+  --foreground: oklch(0.97 0.01 270);
+
+  --card: oklch(0.18 0.04 270);
+  --card-foreground: oklch(0.97 0.01 270);
+  --popover: oklch(0.18 0.04 270);
+  --popover-foreground: oklch(0.97 0.01 270);
+
+  --primary: oklch(0.65 0.24 296);
+  --primary-foreground: oklch(0.14 0.03 270);
+  --secondary: oklch(0.72 0.2 296);
+  --secondary-foreground: oklch(0.14 0.03 270);
+  --accent: oklch(0.7 0.18 230);
+  --accent-foreground: oklch(0.14 0.03 270);
+
+  --muted: oklch(0.2 0.04 270);
+  --muted-foreground: oklch(0.72 0.03 270);
+
+  --success: oklch(0.72 0.17 165);
+  --warning: oklch(0.82 0.16 75);
+  --destructive: oklch(0.68 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.32 0.04 270);
+  --input: oklch(0.32 0.04 270);
+  --ring: oklch(0.65 0.24 296);
+
+  --sidebar: oklch(0.14 0.04 270);
+  --sidebar-foreground: oklch(0.97 0.01 270);
+  --sidebar-primary: oklch(0.65 0.24 296);
+  --sidebar-primary-foreground: oklch(0.14 0.03 270);
+  --sidebar-accent: oklch(0.24 0.05 270);
+  --sidebar-accent-foreground: oklch(0.97 0.01 270);
+  --sidebar-border: oklch(0.32 0.04 270);
+  --sidebar-ring: oklch(0.65 0.24 296);
+
+  --shadow-card: 0 2px 20px -4px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 10px 40px -10px color-mix(in oklab, #a855f7 45%, transparent);
+}
+
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility bg-gradient-primary {
+  background-image: var(--gradient-primary);
+}
+@utility bg-gradient-hero {
+  background-image: var(--gradient-hero);
+}
+@utility bg-gradient-card {
+  background-image: var(--gradient-card);
+}
+@utility text-gradient {
+  background-image: var(--gradient-hero);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+@utility glass {
+  background-color: color-mix(in oklab, var(--card) 70%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+}
